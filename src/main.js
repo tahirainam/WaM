@@ -87,6 +87,8 @@ function startGame() {
       holes[currentMoleIndex]?.classList.remove("active");
       messageEl.style.display = "block";
       messageEl.textContent = `Game Over — Your Score: ${score}`;
+      messageEl.classList.add("show");
+
     }
   }, 1000);
 }
