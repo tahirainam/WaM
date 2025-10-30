@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>whack-a-mole</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Whack-a-Mole</h1>
+
+      <div class="hud">
+        <div>Score: <span id="score">0</span></div>
+        <div>Time: <span id="time">30</span>s</div>
+        <button id="startBtn">Start</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <div id="grid" class="grid">
+        <!-- nine holes -->
+        <div class="hole" data-index="0"></div>
+        <div class="hole" data-index="1"></div>
+        <div class="hole" data-index="2"></div>
+        <div class="hole" data-index="3"></div>
+        <div class="hole" data-index="4"></div>
+        <div class="hole" data-index="5"></div>
+        <div class="hole" data-index="6"></div>
+        <div class="hole" data-index="7"></div>
+        <div class="hole" data-index="8"></div>
+      </div>
+
+      <div id="message" class="message" aria-live="polite"></div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

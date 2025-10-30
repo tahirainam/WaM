@@ -1,0 +1,80 @@
+:root {
+  --bg: #0f172a;
+  --card: #0b1220;
+  --accent: #00e5a8;
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: system-ui, Arial, sans-serif;
+  background: linear-gradient(180deg, #071126 0%, #0b1220 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+.container {
+  width: 340px;
+  max-width: 90vw;
+  text-align: center;
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.7);
+}
+.hud {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.hud button {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 0;
+  background: var(--accent);
+  color: #001;
+  cursor: pointer;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 8px;
+}
+.hole {
+  background: rgba(255, 255, 255, 0.03);
+  height: 86px;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+.hole::after {
+  content: "";
+  width: 70%;
+  height: 60%;
+  background: radial-gradient(circle at 50% 30%, #654, #321 60%);
+  opacity: 0;
+  transform: translateY(40%);
+  transition: transform 0.12s ease, opacity 0.08s;
+  border-radius: 50%;
+}
+.hole.active::after {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ffd;
+}
