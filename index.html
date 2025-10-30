@@ -8,16 +8,16 @@
     <title>whack-a-mole</title>
   </head>
   <body>
-    <main class="container">
+    <header>
       <h1>Whack-a-Mole</h1>
-
       <div class="hud">
+        <button id="startBtn">Start</button>
         <div>Score: <span id="score">0</span></div>
         <div>Time: <span id="time">30</span>s</div>
-        <button id="startBtn">Start</button>
         <button id="resetBtn">Reset</button>
       </div>
-
+    </header>
+    <main class="container">
       <div id="grid" class="grid">
         <!-- nine holes -->
         <div class="hole" data-index="0"></div>

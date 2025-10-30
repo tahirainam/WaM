@@ -8,23 +8,47 @@
   box-sizing: border-box;
 }
 body {
-  font-family: system-ui, Arial, sans-serif;
-  background: linear-gradient(180deg, #071126 0%, #0b1220 100%);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0;
-}
-.container {
-  width: 340px;
-  max-width: 90vw;
+  font-family: "Press Start 2P", monospace;
+  background-color: #000;
+  color: #00ff80;
   text-align: center;
-  padding: 18px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.7);
+  margin: 0;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+h1 {
+  text-shadow: 0 0 10px #00ff80;
+  font-size: 20px;
+}
+
+button {
+  background-color: #111;
+  border: 2px solid #00ff80;
+  color: #00ff80;
+  font-family: inherit;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 5px;
+  text-shadow: 0 0 5px #00ff80;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #00ff80;
+  color: #000;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 15px;
+  margin-top: 30px;
 }
 .hud {
   display: flex;
@@ -49,32 +73,57 @@ body {
   margin-top: 8px;
 }
 .hole {
-  background: rgba(255, 255, 255, 0.03);
-  height: 86px;
-  border-radius: 12px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 50% 60%, #1a1a1a 20%, #000 100%);
+  border: 2px solid #00ff80;
+  border-radius: 50%;
   position: relative;
   cursor: pointer;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
   overflow: hidden;
+  box-shadow: 0 0 10px #00ff80;
+  transition: transform 0.1s ease;
 }
+
+.hole:hover {
+  transform: scale(1.05);
+}
+
+/* The mole */
 .hole::after {
-  content: "";
-  width: 70%;
-  height: 60%;
-  background: radial-gradient(circle at 50% 30%, #654, #321 60%);
+  content: "👾";
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  font-size: 40px;
   opacity: 0;
-  transform: translateY(40%);
-  transition: transform 0.12s ease, opacity 0.08s;
-  border-radius: 50%;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
+
+/* When mole appears */
 .hole.active::after {
+  transform: translate(-50%, -10%);
   opacity: 1;
-  transform: translateY(0%);
 }
+
 .message {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #ffd;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #ff6ec7;
+  text-shadow: 0 0 10px #ff6ec7;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px 30px;
+  border: 2px solid #00ff80;
+  border-radius: 10px;
+  z-index: 10;
+  display: none;
+}
+
+.hole.active:active::after {
+  transform: scale(0.9);
+  transition: transform 0.1s;
 }
