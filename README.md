@@ -1,4 +1,4 @@
-# 🐹 Whack-a-Mole
+# 🐹 WaM
 
 **Whack-a-Mole** is a simple and fun mini-game built with **Vite** and **Vanilla JavaScript**.  
 The goal is to click (or whack!) the mole 🐹 as it appears in one of the holes before it disappears.  
